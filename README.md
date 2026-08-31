@@ -81,7 +81,7 @@ The dataset was selected because its fields map directly to the prototype's inte
 
 ## <a id="links-to-raw-data"></a>Links to Raw Data
 
-*   **Raw development dataset:** [Kaggle - Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
+*   **Raw development dataset:** [Kaggle - Hotel Booking Demand]
 *   **Live HotelBI prototype:** [HotelBI Netlify App](https://hotelbii.netlify.app/)
 
 The CSV supplied with this submission is the project's local working copy of the Hotel Booking Demand dataset. The Netlify link is the deployed front-end prototype documented in the project report.
