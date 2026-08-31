@@ -2,7 +2,7 @@
 
 ---
 
-## Authors
+
 
 **Mohammed Abudagga**  
 202210006  
