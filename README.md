@@ -239,6 +239,7 @@ ________________________________________________________________________________
 Advanced Analytics and AI Modeling
 
 The project does not implement a machine-learning or generative-AI model. This is intentional and is consistent with both the documented design and the prototype. The advanced analytics component combines rule-based decision logic with short-term statistical forecasting so the output remains transparent to hotel managers.
+
 Rule-based analytics: the alert engine compares current or projected values with configurable thresholds. The prototype administrator view shows default rules for low occupancy (65%), competitor rate gap ($20), and cancellation spike (10%). The purpose is not to produce a hidden score; it is to generate an alert whose reason can be shown directly to the manager.
 
 Forecasting: the current prototype uses simple moving averages to produce a short 7-14 day occupancy/revenue outlook. The documentation explicitly treats longer-window or more sophisticated forecasting as future work. Because the project does not use a trained predictive model, measures such as model accuracy, feature weights, precision, recall, or confusion matrices are not applicable to the current implementation and are so not reported.
@@ -251,11 +252,17 @@ Tools Research and Selection Effort
 The tools selected in the project are those documented in the implementation and reference list. The prototype is a web application, and the main choices support CSV handling, interface development, charting, icons, and deployment:
 
 • React - used to build the interactive front-end interface and role-based screens.
+
 • Papa Parse - used for CSV parsing in the front-end prototype.
+
 • Recharts - used for the dashboard charts and visualizations.
+
 • Lucide - used for interface icons.
+
 • Netlify - used to deploy the front-end prototype at hotelbii.netlify.app.
+
 • Kaggle Hotel Booking Demand dataset - used as the development and testing data source.
+
 • Power BI and Tableau - reviewed as established BI competitors; they were not used to build HotelBI because the project is a custom hotel-specific web prototype.
 
 ___________________________________________________________________________________
@@ -268,6 +275,7 @@ The business consumes HotelBI as an interactive web application. The deployed pr
 Deployment URL: https://hotelbii.netlify.app/
 
 Hotel Manager use case sequence:
+
 • Open the web application and select Hotel Manager on the login screen.
 • Log in using the manager account.
 • Open Upload Data and submit a CSV containing the required booking fields; the screen also provides sample and error-file demonstrations.
