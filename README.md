@@ -11,7 +11,7 @@ Mohammed Abudagga
 
 
 Supervised by
-Dr. Anas G. Kanaan
+Dr. Wasef Matar.
 
 
 Course: 307498 – Graduation Project
@@ -60,7 +60,7 @@ Independent hotels with roughly ten to one hundred rooms generate booking and gu
 The project uses the supplied Hotel Booking Demand dataset for development and exploratory analysis. The prototype workflow accepts a booking CSV, validates the required fields, applies the intended cleaning and standardization steps, and presents hotel-specific dashboard modules for revenue and occupancy, booking channels, guest behavior, room status, competitor pricing, short-term forecasts, alerts, exports, upload history, and subscription management. The analytics approach is deliberately explainable: alerts are rule-based and the forecast is based on simple moving averages rather than a black-box machine-learning model.
 The result is a working front-end demonstration that shows how a hotel manager can move from booking data to a clear operational view in a small number of steps. The prototype demonstrates the intended user experience and business logic, while the current documented limitations remain: no persistent backend/database, illustrative occupancy values on the main dashboard, manual competitor-rate entry, and moving-average forecasting intended for a short 7-14 day window.
 Acknowledgment
-I would like to thank my supervisor, Dr. Anas G. Kanaan, for his guidance and honest feedback throughout the development of this project. His questions about who would actually pay for this and why pushed me to rethink parts of the business model I had originally taken for granted, and the project is stronger for it.
+I would like to thank my supervisor, Dr. Wasef Matar, for his guidance and honest feedback throughout the development of this project. His questions about who would actually pay for this and why pushed me to rethink parts of the business model I had originally taken for granted, and the project is stronger for it.
 I am also grateful to the Faculty of Administrative and Financial Sciences at the University of Petra for the resources and support that made this project possible, and to the independent hotel managers and industry contacts who took the time to discuss how they currently handle pricing and booking data. Their input shaped how I approached this problem.
 Business Intelligence Project description and objectives
 HotelBI is a web-based business intelligence prototype for independent hotel owners and managers, especially properties with roughly 10-100 rooms and no dedicated analytics team. The business problem is not a lack of booking data; it is the lack of an affordable and simple way to interpret that data. The project so focuses on turning a booking CSV export into hotel-specific insights that can be understood without a technical background.
