@@ -1,8 +1,4 @@
-# To be installed libraries for the project
-pandas
-numpy
-matplotlib
-scikit-learn
-seaborn
-xgboost
-# etc. (add any other libraries you need for your project)
+Flask==3.1.2
+flask-cors==6.0.1
+pandas==2.3.2
+gunicorn==23.0.0
