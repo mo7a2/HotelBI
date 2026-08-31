@@ -102,6 +102,9 @@ The HotelBI upload screen defines four required columns and five optional column
 | **GuestCountry** | country | Optional | Provides guest-origin context. |
 | **RepeatGuest** | is_repeated_guest | Optional | Supports the repeat-guest metric in Guest Insights. |
 
+
+<img width="425" height="248" alt="image" src="https://github.com/user-attachments/assets/bbb7dda0-3ac5-4840-bfe3-eee6b246ec5e" />
+
 *   **Figure:** Booking status distribution after duplicate removal. Cancellation rate in the prepared data is 27.5%.
 *   **Figure:** Booking volume by distribution channel. The data supports the channel-mix view that appears in the HotelBI dashboard.
 *   **Figure:** Lead-time distribution. The prepared data has an average lead time of 79.9 days and a median of 49 days, supporting the lead-time metric in Guest Insights.
