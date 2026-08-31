@@ -180,6 +180,39 @@ The preparation sequence is aligned with the HotelBI upload and ETL behavior des
 
 ___________________________________________________________________________________
 
+Python Libraries and Backend Implementation
+
+The Python backend was developed using several libraries to support data processing, web API development, database management, and analytical operations.
+
+•	Flask: Used to build the backend application and create REST API endpoints that connect the dashboard with the data-processing layer.
+
+•	Pandas: Used as the main data analysis and manipulation library. It is responsible for reading CSV files, cleaning records, removing duplicates, converting data types, filtering invalid records, grouping data, and calculating analytical metrics.
+
+•	NumPy: Used for numerical calculations and statistical operations, particularly when calculating averages, sums, and forecasting values.
+
+•	SQLite3: Used to create and manage the local database. It stores upload history, user profiles, and system settings.
+
+•	JSON: Used to serialize and exchange structured data between the backend and frontend.
+
+•	io: Used to read uploaded CSV files directly from memory before processing them with Pandas.
+
+•	datetime: Used to handle dates and timestamps, including upload times and hotel booking dates.
+
+•	Flask-CORS: Used to enable communication between the frontend application and the Flask backend.
+
+The backend is organized into reusable functions. The process_dataframe() function performs the main data-validation and transformation process. It checks the required columns, removes duplicate records, converts dates and numerical fields, validates room availability and revenue values, and calculates occupancy, ADR, and RevPAR.
+
+The daily_metrics() function transforms booking-level information into daily hotel performance metrics. It calculates the number of occupied rooms, revenue, occupancy percentage, ADR, and RevPAR for each day.
+
+The guest_insights() function analyzes guest-related information and produces indicators such as repeat-guest rate, cancellation rate, average stay duration, booking channels, guest countries, and room types.
+
+This structure separates data processing from the presentation layer and allows the analytical results to be returned to the dashboard through API responses.
+
+<img width="468" height="575" alt="image" src="https://github.com/user-attachments/assets/b6f630b2-6356-4b87-91b7-a268bad9dec7" />
+
+
+___________________________________________________________________________________
+
 
 Data Visualization and Insights:
 
