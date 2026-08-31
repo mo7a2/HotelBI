@@ -172,8 +172,6 @@ The EDA figures in the previous section were used to verify that the supplied da
 ### Dashboard Design & Insights
 
 *   **Business Question 1 - How is the hotel performing across occupancy, ADR, RevPAR, and channel mix?**
-<img width="399" height="281" alt="image" src="https://github.com/user-attachments/assets/f944d891-710d-4400-8aa4-ab0a7b73156c" />
-
     *HotelBI Revenue and Occupancy dashboard - 14-day view.*  
     The main dashboard answers this with three KPI cards, an Occupancy and ADR trend chart, a RevPAR chart, and a bookings-by-channel donut chart. In the prototype screenshot the selected 14-day view displays 79.8% occupancy, $149 ADR, and $120 RevPAR. These figures are part of the prototype demonstration; the project documentation states that the occupancy trend is illustrative rather than calculated live from the supplied Kaggle dataset.
 
