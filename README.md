@@ -25,12 +25,9 @@
 *   [Links to Raw Data](#links-to-raw-data)
 *   [Data Description and Understandings](#data-description-and-understandings)
 *   [Data Primary Cleaning and Transformation](#data-primary-cleaning-and-transformation)
-*   [Python Libraries and Backend Implementation](#python-libraries-and-backend-implementation)
 *   [Data Visualization and Insights](#data-visualization-and-insights)
 *   [Advanced Analytics and AI Modeling](#advanced-analytics-and-ai-modeling)
-*   [Data Analytics and Business Intelligence Functions](#data-analytics-and-business-intelligence-functions)
 *   [Tools Research and Selection Effort](#tools-research-and-selection-effort)
-*   [HTML and Frontend Implementation](#html-and-frontend-implementation)
 *   [Project Deployment Effort – Use Case](#project-deployment-effort--use-case)
 *   [Results](#results)
 *   [References](#references)
@@ -139,28 +136,6 @@ The preparation sequence is aligned with the HotelBI upload and ETL behavior des
 *   Do not invent `GuestName` because that field is not available in the supplied dataset. It remains an optional prototype field only.
 *   Preserve the project limitation around occupancy: true occupancy requires room-inventory availability as well as bookings, and the supplied dataset does not provide a complete room inventory calendar. So, this report does not present the prototype's sample occupancy percentage as a value calculated from the Kaggle CSV.
 
----
-
-## <a id="python-libraries-and-backend-implementation"></a>Python Libraries and Backend Implementation
-
-The Python backend was developed using several libraries to support data processing, web API development, database management, and analytical operations.
-
-*   **Flask:** Used to build the backend application and create REST API endpoints that connect the dashboard with the data-processing layer.
-*   **Pandas:** Used as the main data analysis and manipulation library. It is responsible for reading CSV files, cleaning records, removing duplicates, converting data types, filtering invalid records, grouping data, and calculating analytical metrics.
-*   **NumPy:** Used for numerical calculations and statistical operations, particularly when calculating averages, sums, and forecasting values.
-*   **SQLite3:** Used to create and manage the local database. It stores upload history, user profiles, and system settings.
-*   **JSON:** Used to serialize and exchange structured data between the backend and frontend.
-*   **io:** Used to read uploaded CSV files directly from memory before processing them with Pandas.
-*   **datetime:** Used to handle dates and timestamps, including upload times and hotel booking dates.
-*   **Flask-CORS:** Used to enable communication between the frontend application and the Flask backend.
-
-The backend is organized into reusable functions. The `process_dataframe()` function performs the main data-validation and transformation process. It checks the required columns, removes duplicate records, converts dates and numerical fields, validates room availability and revenue values, and calculates occupancy, ADR, and RevPAR.
-
-The `daily_metrics()` function transforms booking-level information into daily hotel performance metrics. It calculates the number of occupied rooms, revenue, occupancy percentage, ADR, and RevPAR for each day.
-
-The `guest_insights()` function analyzes guest-related information and produces indicators such as repeat-guest rate, cancellation rate, average stay duration, booking channels, guest countries, and room types.
-
-This structure separates data processing from the presentation layer and allows the analytical results to be returned to the dashboard through API responses.
 
 ---
 
@@ -208,30 +183,6 @@ The project does not implement a machine-learning or generative-AI model. This i
 
 ---
 
-## <a id="data-analytics-and-business-intelligence-functions"></a>Data Analytics and Business Intelligence Functions
-
-The second Python component focuses on transforming cleaned hotel booking data into meaningful Business Intelligence indicators and decision-support information.
-
-The data-cleaning process uses functions such as `_norm_name()`, `_rename_columns()`, `parse_csv_bytes()`, and `clean_bookings()`. These functions standardize column names, identify required fields, remove duplicate records, validate dates and rates, handle missing optional fields, standardize booking statuses and booking channels, and create additional analytical fields such as `Nights` and `StayRevenue`.
-
-Several Key Performance Indicators (KPIs) are calculated from the processed data:
-*   **Occupancy Rate:** Calculated as rooms sold divided by available rooms, multiplied by 100.
-*   **Average Daily Rate (ADR):** Calculated as room revenue divided by the number of rooms sold.
-*   **Revenue per Available Room (RevPAR):** Calculated as room revenue divided by the total number of available rooms.
-*   **Repeat Guest Rate:** Calculated from the percentage of bookings identified as repeat guests.
-*   **Cancellation Rate:** Calculated from the percentage of bookings classified as cancelled or no-show.
-*   **Average Stay:** Calculated from the average number of nights per booking.
-
-The `dashboard_summary()` function aggregates the daily analytical results and provides average occupancy, average ADR, average RevPAR, and total revenue.
-
-For predictive analytics, the `forecast_from_daily()` function uses historical occupancy values and NumPy numerical functions to estimate future occupancy. A linear trend is fitted to the available daily data using `numpy.polyfit()`, and the predicted values are limited to a realistic range between 0% and 100%. The function also calculates lower and upper prediction boundaries using the standard deviation of the historical residuals.
-
-The `build_alerts()` function implements rule-based Business Intelligence alerts. It compares calculated KPIs against configurable thresholds and generates alerts when performance requires management attention. This provides an explainable decision-support mechanism instead of relying on a black-box machine-learning model.
-
-Overall, these functions demonstrate the transformation of raw hotel data into cleaned information, analytical KPIs, trends, forecasts, and actionable business insights.
-
----
-
 ## <a id="tools-research-and-selection-effort"></a>Tools Research and Selection Effort
 
 The tools selected in the project are those documented in the implementation and reference list. The prototype is a web application, and the main choices support CSV handling, interface development, charting, icons, and deployment:
@@ -243,20 +194,6 @@ The tools selected in the project are those documented in the implementation and
 *   **Netlify:** Used to deploy the front-end prototype at `hotelbii.netlify.app`.
 *   **Kaggle Hotel Booking Demand dataset:** Used as the development and testing data source.
 *   **Power BI and Tableau:** Reviewed as established BI competitors; they were not used to build HotelBI because the project is a custom hotel-specific web prototype.
-
----
-
-## <a id="html-and-frontend-implementation"></a>HTML and Frontend Implementation
-
-The HTML component provides the basic structure and entry point of the HotelBI web application. The document defines the page structure, metadata, viewport configuration, title, and the root element in which the React application is rendered.
-
-The frontend is responsible for presenting the analytical results in an interactive dashboard. It provides the user interface for uploading data, viewing KPIs, exploring guest insights, monitoring room status, reviewing competitor pricing, viewing forecasts, and managing alerts. The frontend communicates with the Python backend through API endpoints. For example, uploaded CSV files are sent to the backend for validation and processing, while the resulting JSON data is returned to the frontend and displayed through the dashboard.
-
-The interface therefore acts as the visualization layer of the Business Intelligence system, while Python performs the main data preparation and analytical processing. This separation follows a clear data flow:
-
-> Raw Data $\rightarrow$ Data Cleaning $\rightarrow$ Data Transformation $\rightarrow$ KPI Calculation $\rightarrow$ Analytics/Forecasting $\rightarrow$ API $\rightarrow$ Dashboard Visualization
-
-This architecture allows the project to convert raw hotel booking data into information that can support operational and managerial decision-making.
 
 ---
 
