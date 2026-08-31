@@ -91,6 +91,7 @@ HotelBI is a web-based business intelligence prototype for independent hotel own
 
 
 The project objectives documented and implemented in the prototype are:
+
 • Provide a CSV upload workflow for hotel booking data and clearly identify required and optional fields.
 
 • Apply an ETL preparation process that validates files, removes duplicate rows, standardizes date formats, and standardizes booking-channel values.
@@ -117,7 +118,9 @@ ________________________________________________________________________________
 Links to raw data
 
 Raw development dataset: Kaggle - Hotel Booking Demand
+
 Live HotelBI prototype: https://hotelbii.netlify.app/
+
 The CSV supplied with this submission is the project's local working copy of the Hotel Booking Demand dataset. The Netlify link is the deployed front-end prototype documented in the project report.
 
 ___________________________________________________________________________________
@@ -126,17 +129,18 @@ ________________________________________________________________________________
 Data Description and understandings
 
 The HotelBI upload screen defines four required columns and five optional columns. The table below maps those fields to the supplied Hotel Booking Demand dataset and explains why each field matters to the project. GuestName is optional in HotelBI but does not exist in the Kaggle dataset, so no guest-name analysis is claimed.
-HotelBI field	Source / transformation	Requirement	Why it matters
-CheckInDate	arrival_date_year + arrival_date_month + arrival_date_day_of_month	Required	Defines arrival timing and supports time-based trends.
-CheckOutDate	CheckInDate + stays_in_weekend_nights + stays_in_week_nights	Required	Defines stay end date and length of stay.
-RateAmount	adr	Required	Supports ADR and revenue-oriented analysis.
-BookingStatus	is_canceled / reservation_status	Required	Separates confirmed and cancelled bookings and supports cancellation analysis.
-RoomType	assigned_room_type	Optional	Supports room-category views in the prototype.
-Channel	distribution_channel	Optional	Supports the bookings-by-channel view and channel comparison.
-GuestName	Not available in supplied Kaggle dataset	Optional	Supported by the prototype upload structure, but not used in this dataset analysis.
-GuestCountry	country	Optional	Provides guest-origin context.
-RepeatGuest	is_repeated_guest	Optional	Supports the repeat-guest metric in Guest Insights.
-Initial EDA used the supplied CSV before and after the intended duplicate-removal step. The raw file contains 119,390 records and 32 columns. Exact duplicate-row checking identified 31,994 duplicate rows. Missing values occur mainly in company (112,593), agent (16,340), country (488), and children (4). Company and agent are not required by the HotelBI prototype, while missing country and children values can be handled during preparation.
+
+| HotelBI field | Source / transformation | Requirement | Why it matters |
+| --- | --- | --- | --- |
+| CheckInDate | arrival_date_year + arrival_date_month + arrival_date_day_of_month | Required | Defines arrival timing and supports time-based trends. |
+| CheckOutDate | CheckInDate + stays_in_weekend_nights + stays_in_week_nights | Required | Defines stay end date and length of stay. |
+| RateAmount | adr | Required | Supports ADR and revenue-oriented analysis. |
+| BookingStatus | is_canceled / reservation_status | Required | Separates confirmed and cancelled bookings and supports cancellation analysis. |
+| RoomType | assigned_room_type | Optional | Supports room-category views in the prototype. |
+| Channel | distribution_channel | Optional | Supports the bookings-by-channel view and channel comparison. |
+| GuestName | Not available in supplied Kaggle dataset | Optional | Supported by the prototype upload structure, but not used in this dataset analysis. |
+| GuestCountry | country | Optional | Provides guest-origin context. |
+| RepeatGuest | is_repeated_guest | Optional | Supports the repeat-guest metric in Guest Insights. |
 ___________________________________________________________________________________
  
 Figure: Booking status distribution after duplicate removal. Cancellation rate in the prepared data is 27.5%.
