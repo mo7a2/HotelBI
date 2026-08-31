@@ -8,8 +8,10 @@
 202210006  
 
 **Supervised by:** Dr. Wasef Matar  
+
 **Course:** 307498 – Graduation Project  
-**Semester:** First Semester, 2025/2027  
+
+**Semester:** summer Semester, 2025/2027  
 **Year:** 2026  
 
 ---
