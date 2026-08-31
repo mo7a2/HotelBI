@@ -16,26 +16,26 @@
 
 ## Table of Contents
 
-*   Abstract
-*   Acknowledgment
-*   Business Intelligence Project Description and Objectives
-*   Data Research and Acquiring Effort
-*   Links to Raw Data
-*   Data Description and Understandings
-*   Data Primary Cleaning and Transformation
-*   Python Libraries and Backend Implementation
-*   Data Visualization and Insights
-*   Advanced Analytics and AI Modeling
-*   Data Analytics and Business Intelligence Functions
-*   Tools Research and Selection Effort
-*   HTML and Frontend Implementation
-*   Project Deployment Effort – Use Case
-*   Results
-*   References
+*   [Abstract](#abstract)
+*   [Acknowledgment](#acknowledgment)
+*   [Business Intelligence Project Description and Objectives](#business-intelligence-project-description-and-objectives)
+*   [Data Research and Acquiring Effort](#data-research-and-acquiring-effort)
+*   [Links to Raw Data](#links-to-raw-data)
+*   [Data Description and Understandings](#data-description-and-understandings)
+*   [Data Primary Cleaning and Transformation](#data-primary-cleaning-and-transformation)
+*   [Python Libraries and Backend Implementation](#python-libraries-and-backend-implementation)
+*   [Data Visualization and Insights](#data-visualization-and-insights)
+*   [Advanced Analytics and AI Modeling](#advanced-analytics-and-ai-modeling)
+*   [Data Analytics and Business Intelligence Functions](#data-analytics-and-business-intelligence-functions)
+*   [Tools Research and Selection Effort](#tools-research-and-selection-effort)
+*   [HTML and Frontend Implementation](#html-and-frontend-implementation)
+*   [Project Deployment Effort – Use Case](#project-deployment-effort--use-case)
+*   [Results](#results)
+*   [References](#references)
 
 ---
 
-## Abstract
+## <a id="abstract"></a>Abstract
 
 Independent hotels with roughly ten to one hundred rooms generate booking and guest data through reservation systems and online travel agencies, but many small properties still lack an affordable and understandable way to turn that data into pricing, occupancy, and channel decisions. The **Hotel Revenue and Guest Insights Dashboard** addresses this gap through a web-based prototype designed specifically for independent hotel managers.
 
@@ -45,7 +45,7 @@ The result is a working front-end demonstration that shows how a hotel manager c
 
 ---
 
-## Acknowledgment
+## <a id="acknowledgment"></a>Acknowledgment
 
 I would like to thank my supervisor, **Dr. Wasef Matar**, for his guidance and honest feedback throughout the development of this project. His questions about who would actually pay for this and why pushed me to rethink parts of the business model I had originally taken for granted, and the project is stronger for it.
 
@@ -53,7 +53,7 @@ I am also grateful to the **Faculty of Administrative and Financial Sciences at 
 
 ---
 
-## Business Intelligence Project Description and Objectives
+## <a id="business-intelligence-project-description-and-objectives"></a>Business Intelligence Project Description and Objectives
 
 **HotelBI** is a web-based business intelligence prototype for independent hotel owners and managers, especially properties with roughly 10-100 rooms and no dedicated analytics team. The business problem is not a lack of booking data; it is the lack of an affordable and simple way to interpret that data. The project so focuses on turning a booking CSV export into hotel-specific insights that can be understood without a technical background.
 
@@ -69,7 +69,7 @@ The project objectives documented and implemented in the prototype are:
 
 ---
 
-## Data Research and Acquiring Effort
+## <a id="data-research-and-acquiring-effort"></a>Data Research and Acquiring Effort
 
 The project required a hotel-booking dataset containing fields that could support the same business questions represented in HotelBI: booking status, arrival dates, stay duration, rate, distribution channel, guest country, repeat-guest status, room type, lead time, and cancellation behavior. The supplied development dataset is the **Hotel Booking Demand dataset by Jesse Mostipak on Kaggle**. It contains 119,390 rows and 32 source columns and was used for development, testing, and exploratory analysis.
 
@@ -77,7 +77,7 @@ The dataset was selected because its fields map directly to the prototype's inte
 
 ---
 
-## Links to Raw Data
+## <a id="links-to-raw-data"></a>Links to Raw Data
 
 *   **Raw development dataset:** [Kaggle - Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
 *   **Live HotelBI prototype:** [HotelBI Netlify App](https://hotelbii.netlify.app/)
@@ -86,7 +86,7 @@ The CSV supplied with this submission is the project's local working copy of the
 
 ---
 
-## Data Description and Understandings
+## <a id="data-description-and-understandings"></a>Data Description and Understandings
 
 The HotelBI upload screen defines four required columns and five optional columns. The table below maps those fields to the supplied Hotel Booking Demand dataset and explains why each field matters to the project. `GuestName` is optional in HotelBI but does not exist in the Kaggle dataset, so no guest-name analysis is claimed.
 
@@ -111,7 +111,7 @@ The EDA patterns directly relate to HotelBI rather than introducing additional a
 
 ---
 
-## Data Primary Cleaning and Transformation
+## <a id="data-primary-cleaning-and-transformation"></a>Data Primary Cleaning and Transformation
 
 The preparation sequence is aligned with the HotelBI upload and ETL behavior described in the project documentation and with the fields shown on the prototype upload screen:
 
@@ -127,7 +127,7 @@ The preparation sequence is aligned with the HotelBI upload and ETL behavior des
 
 ---
 
-## Python Libraries and Backend Implementation
+## <a id="python-libraries-and-backend-implementation"></a>Python Libraries and Backend Implementation
 
 The Python backend was developed using several libraries to support data processing, web API development, database management, and analytical operations.
 
@@ -150,7 +150,7 @@ This structure separates data processing from the presentation layer and allows 
 
 ---
 
-## Data Visualization and Insights
+## <a id="data-visualization-and-insights"></a>Data Visualization and Insights
 
 The final visualization layer is the HotelBI web dashboard. The screenshots below are taken from the supplied project documentation and represent the same functions documented for the deployed prototype. The report does not add dashboard modules beyond those already present in HotelBI.
 
@@ -185,7 +185,7 @@ The EDA figures in the previous section were used to verify that the supplied da
 
 ---
 
-## Advanced Analytics and AI Modeling
+## <a id="advanced-analytics-and-ai-modeling"></a>Advanced Analytics and AI Modeling
 
 The project does not implement a machine-learning or generative-AI model. This is intentional and is consistent with both the documented design and the prototype. The advanced analytics component combines rule-based decision logic with short-term statistical forecasting so the output remains transparent to hotel managers.
 
@@ -194,7 +194,7 @@ The project does not implement a machine-learning or generative-AI model. This i
 
 ---
 
-## Data Analytics and Business Intelligence Functions
+## <a id="data-analytics-and-business-intelligence-functions"></a>Data Analytics and Business Intelligence Functions
 
 The second Python component focuses on transforming cleaned hotel booking data into meaningful Business Intelligence indicators and decision-support information.
 
@@ -218,7 +218,7 @@ Overall, these functions demonstrate the transformation of raw hotel data into c
 
 ---
 
-## Tools Research and Selection Effort
+## <a id="tools-research-and-selection-effort"></a>Tools Research and Selection Effort
 
 The tools selected in the project are those documented in the implementation and reference list. The prototype is a web application, and the main choices support CSV handling, interface development, charting, icons, and deployment:
 
@@ -232,7 +232,7 @@ The tools selected in the project are those documented in the implementation and
 
 ---
 
-## HTML and Frontend Implementation
+## <a id="html-and-frontend-implementation"></a>HTML and Frontend Implementation
 
 The HTML component provides the basic structure and entry point of the HotelBI web application. The document defines the page structure, metadata, viewport configuration, title, and the root element in which the React application is rendered.
 
@@ -246,7 +246,7 @@ This architecture allows the project to convert raw hotel booking data into info
 
 ---
 
-## Project Deployment Effort – Use Case
+## <a id="project-deployment-effort---use-case"></a>Project Deployment Effort – Use Case
 
 The business consumes HotelBI as an interactive web application. The deployed prototype is available through Netlify and is designed around two roles: Hotel Manager and Administrator.
 
@@ -273,7 +273,7 @@ The business consumes HotelBI as an interactive web application. The deployed pr
 
 ---
 
-## Results
+## <a id="results"></a>Results
 
 The project produced a complete front-end HotelBI prototype that connects the major business questions of an independent hotel to a single interface. The manager side covers upload, revenue and occupancy, channel mix, guest behavior, room status, competitor pricing, short-term forecasting, alerts, exports, upload history, and profile/subscription management. The administrator side adds platform overview, onboarding, alert thresholds, and subscription-tier controls. This confirms that the planned information architecture and user flow can be represented coherently in one hotel-specific BI product.
 
@@ -283,7 +283,7 @@ The most important project result is not a single predictive score; it is the ex
 
 ---
 
-## References
+## <a id="references"></a>References
 
 *   Cloudbeds. (n.d.). *Cloudbeds hospitality platform*. [https://www.cloudbeds.com](https://www.cloudbeds.com)
 *   Little Hotelier. (n.d.). *Little Hotelier property management system*. [https://www.littlehotelier.com](https://www.littlehotelier.com)
