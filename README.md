@@ -208,8 +208,6 @@ The guest_insights() function analyzes guest-related information and produces in
 
 This structure separates data processing from the presentation layer and allows the analytical results to be returned to the dashboard through API responses.
 
-<img width="468" height="575" alt="image" src="https://github.com/user-attachments/assets/b6f630b2-6356-4b87-91b7-a268bad9dec7" />
-
 
 ___________________________________________________________________________________
 
@@ -279,6 +277,40 @@ Forecasting: the current prototype uses simple moving averages to produce a shor
 
 ___________________________________________________________________________________
 
+Data Analytics and Business Intelligence Functions
+
+The second Python component focuses on transforming cleaned hotel booking data into meaningful Business Intelligence indicators and decision-support information.
+
+The data-cleaning process uses functions such as _norm_name(), _rename_columns(), parse_csv_bytes(), and clean_bookings(). These functions standardize column names, identify required fields, remove duplicate records, validate dates and rates, handle missing optional fields, standardize booking statuses and booking channels, and create additional analytical fields such as Nights and StayRevenue.
+
+
+Several Key Performance Indicators (KPIs) are calculated from the processed data:
+
+•	Occupancy Rate: calculated as rooms sold divided by available rooms, multiplied by 100.
+
+•	Average Daily Rate (ADR): calculated as room revenue divided by the number of rooms sold.
+
+•	Revenue per Available Room (RevPAR): calculated as room revenue divided by the total number of available rooms.
+
+•	Repeat Guest Rate: calculated from the percentage of bookings identified as repeat guests.
+
+•	Cancellation Rate: calculated from the percentage of bookings classified as cancelled or no-show.
+
+•	Average Stay: calculated from the average number of nights per booking.
+
+
+The dashboard_summary() function aggregates the daily analytical results and provides average occupancy, average ADR, average RevPAR, and total revenue.
+
+For predictive analytics, the forecast_from_daily() function uses historical occupancy values and NumPy numerical functions to estimate future occupancy. A linear trend is fitted to the available daily data using numpy.polyfit(), and the predicted values are limited to a realistic range between 0% and 100%. The function also calculates lower and upper prediction boundaries using the standard deviation of the historical residuals.
+
+The build_alerts() function implements rule-based Business Intelligence alerts. It compares calculated KPIs against configurable thresholds and generates alerts when performance requires management attention. This provides an explainable decision-support mechanism instead of relying on a black-box machine-learning model.
+
+Overall, these functions demonstrate the transformation of raw hotel data into cleaned information, analytical KPIs, trends, forecasts, and actionable business insights.
+
+
+___________________________________________________________________________________
+
+
 
 Tools Research and Selection Effort
 
@@ -297,6 +329,21 @@ The tools selected in the project are those documented in the implementation and
 • Kaggle Hotel Booking Demand dataset - used as the development and testing data source.
 
 • Power BI and Tableau - reviewed as established BI competitors; they were not used to build HotelBI because the project is a custom hotel-specific web prototype.
+
+___________________________________________________________________________________
+
+HTML and Frontend Implementation
+
+The HTML component provides the basic structure and entry point of the HotelBI web application. The document defines the page structure, metadata, viewport configuration, title, and the root element in which the React application is rendered.
+
+The frontend is responsible for presenting the analytical results in an interactive dashboard. It provides the user interface for uploading data, viewing KPIs, exploring guest insights, monitoring room status, reviewing competitor pricing, viewing forecasts, and managing alerts.The frontend communicates with the Python backend through API endpoints. For example, uploaded CSV files are sent to the backend for validation and processing, while the resulting JSON data is returned to the frontend and displayed through the dashboard.
+
+The interface therefore acts as the visualization layer of the Business Intelligence system, while Python performs the main data preparation and analytical processing. This separation follows a clear data flow:
+
+Raw Data → Data Cleaning → Data Transformation → KPI Calculation → Analytics/Forecasting → API → Dashboard Visualization
+
+This architecture allows the project to convert raw hotel booking data into information that can support operational and managerial decision-making.
+
 
 ___________________________________________________________________________________
 
