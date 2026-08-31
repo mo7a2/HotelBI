@@ -56,6 +56,7 @@ ________________________________________________________________________________
 
 
 Abstract
+
 Independent hotels with roughly ten to one hundred rooms generate booking and guest data through reservation systems and online travel agencies, but many small properties still lack an affordable and understandable way to turn that data into pricing, occupancy, and channel decisions. The Hotel Revenue and Guest Insights Dashboard addresses this gap through a web-based prototype designed specifically for independent hotel managers.
 
 The project uses the supplied Hotel Booking Demand dataset for development and exploratory analysis. The prototype workflow accepts a booking CSV, validates the required fields, applies the intended cleaning and standardization steps, and presents hotel-specific dashboard modules for revenue and occupancy, booking channels, guest behavior, room status, competitor pricing, short-term forecasts, alerts, exports, upload history, and subscription management. The analytics approach is deliberately explainable: alerts are rule-based and the forecast is based on simple moving averages rather than a black-box machine-learning model.
@@ -65,6 +66,7 @@ The result is a working front-end demonstration that shows how a hotel manager c
 ___________________________________________________________________________________
 
 Acknowledgment
+
 I would like to thank my supervisor, Dr. Wasef Matar, for his guidance and honest feedback throughout the development of this project. His questions about who would actually pay for this and why pushed me to rethink parts of the business model I had originally taken for granted, and the project is stronger for it.
 
 I am also grateful to the Faculty of Administrative and Financial Sciences at the University of Petra for the resources and support that made this project possible, and to the independent hotel managers and industry contacts who took the time to discuss how they currently handle pricing and booking data. Their input shaped how I approached this problem.
@@ -72,6 +74,7 @@ I am also grateful to the Faculty of Administrative and Financial Sciences at th
 ___________________________________________________________________________________
 
 Business Intelligence Project description and objectives
+
 HotelBI is a web-based business intelligence prototype for independent hotel owners and managers, especially properties with roughly 10-100 rooms and no dedicated analytics team. The business problem is not a lack of booking data; it is the lack of an affordable and simple way to interpret that data. The project so focuses on turning a booking CSV export into hotel-specific insights that can be understood without a technical background.
 
 
@@ -93,6 +96,7 @@ The project objectives documented and implemented in the prototype are:
 ___________________________________________________________________________________
 
 Data Research and Acquiring Effort
+
 The project required a hotel-booking dataset containing fields that could support the same business questions represented in HotelBI: booking status, arrival dates, stay duration, rate, distribution channel, guest country, repeat-guest status, room type, lead time, and cancellation behavior. The supplied development dataset is the Hotel Booking Demand dataset by Jesse Mostipak on Kaggle. It contains 119,390 rows and 32 source columns and was used for development, testing, and exploratory analysis.
 The dataset was selected because its fields map directly to the prototype's intended booking-data workflow. Where the prototype expects a single CheckInDate and CheckOutDate, the Kaggle source provides arrival date components and length-of-stay fields, so these can be transformed into the prototype structure. The project documentation also makes clear that real hotel data would ultimately be supplied by the hotel through a reservation-system or OTA CSV export.
 
@@ -108,6 +112,7 @@ ________________________________________________________________________________
 
 
 Data Description and understandings
+
 The HotelBI upload screen defines four required columns and five optional columns. The table below maps those fields to the supplied Hotel Booking Demand dataset and explains why each field matters to the project. GuestName is optional in HotelBI but does not exist in the Kaggle dataset, so no guest-name analysis is claimed.
 HotelBI field	Source / transformation	Requirement	Why it matters
 CheckInDate	arrival_date_year + arrival_date_month + arrival_date_day_of_month	Required	Defines arrival timing and supports time-based trends.
