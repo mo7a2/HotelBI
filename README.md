@@ -277,19 +277,32 @@ Deployment URL: https://hotelbii.netlify.app/
 Hotel Manager use case sequence:
 
 • Open the web application and select Hotel Manager on the login screen.
+
 • Log in using the manager account.
+
 • Open Upload Data and submit a CSV containing the required booking fields; the screen also provides sample and error-file demonstrations.
+
 • Use Dashboard to review the selected 7-day or 14-day revenue and occupancy view.
+
 • Open Guest Insights, Room Status, Competitor Pricing, Forecasts, and Alerts for the corresponding analysis modules.
+
 • Use Export Reports to export current information and Upload History to review or reprocess previous submissions.
+
 • Use Profile to review hotel details and Standard/Premium subscription information.
 
+
 Administrator use case sequence:
+
 • Log in as Administrator.
+
 • Use Platform Overview to review aggregate hotel accounts, premium accounts, uploads, and open alerts.
+
 • Use Hotel Onboarding to confirm new-hotel setup.
+
 • Use Alert Thresholds to adjust the default rules.
+
 • Use Subscription Tiers to review the Standard and Premium feature sets.
+
  
 HotelBI Administrator - Platform Overview.
 Current deployment scope: the deployed version is a front-end demonstration. The supplied documentation states that there is no real persistent server/database behind it yet, uploaded data and account changes do not persist after refresh, and login uses fixed demo credentials. These limitations are retained here rather than describing deployment capabilities that are not part of the current project.
