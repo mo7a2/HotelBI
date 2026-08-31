@@ -1,4 +1,5 @@
-# Project Title
+# Hotel Revenue and Guest Insights Dashboard
+
 
 
 ## **Title Page & Authors**
