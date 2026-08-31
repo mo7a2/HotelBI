@@ -106,8 +106,17 @@ The HotelBI upload screen defines four required columns and five optional column
 <img width="425" height="248" alt="image" src="https://github.com/user-attachments/assets/bbb7dda0-3ac5-4840-bfe3-eee6b246ec5e" />
 
 *   **Figure:** Booking status distribution after duplicate removal. Cancellation rate in the prepared data is 27.5%.
+
+<img width="425" height="248" alt="image" src="https://github.com/user-attachments/assets/9c1dfa0f-fde3-4ff7-baa8-461aafce60ad" />
+
 *   **Figure:** Booking volume by distribution channel. The data supports the channel-mix view that appears in the HotelBI dashboard.
+
+  <img width="425" height="248" alt="image" src="https://github.com/user-attachments/assets/cc6a17f0-4173-49c9-b0e2-20f37a3286d0" />
+
 *   **Figure:** Lead-time distribution. The prepared data has an average lead time of 79.9 days and a median of 49 days, supporting the lead-time metric in Guest Insights.
+  
+<img width="425" height="248" alt="image" src="https://github.com/user-attachments/assets/bf3615bf-8932-4d68-abb7-87a3cdd03fae" />
+
 *   **Figure:** ADR distribution for confirmed bookings within the displayed 0-500 range. The mean ADR for confirmed non-negative-rate records is about 102.00.
 
 The EDA patterns directly relate to HotelBI rather than introducing additional analytics. Cancellation status supports the alerts and Guest Insights modules; distribution channel supports the channel breakdown; lead time supports Guest Insights; and ADR supports the revenue and occupancy dashboard. Repeat guests account for about 3.9% of the prepared records, which is why repeat-guest tracking is shown as a dedicated metric in the prototype.
